@@ -1,0 +1,22 @@
+#fungsi menghitung present value
+#A=nilai akumulasi,t=tahun,i=bunga,m=banyaknya membayar
+#pilihan(num)
+#1:nilai pv bunga tunggal
+#2:nilai pv bunga  majemuk nominal
+#3:nilai pv bunga  majemuk kontinu
+pv<- function(num,A,i,t,m=TRUE)
+  switch(num, 
+         satu = {
+           btunggal = A/(1+i*t)
+           cat("Nilai Present Value Bungga tunggal:",btunggal)
+         },
+         dua = {
+           bmajemuknom = A*(1+i/m)^(-m*t)
+           cat("Nilai Present Value Bunga majemuk nominal:",bmajemuknom)
+         },
+         tiga = {
+           bmajemukkon = A*exp(-i*t)
+           cat(" Nilai Present Value Bunga majemuk kontinu:",bmajemukkon)
+         }
+  )
+
