@@ -1,0 +1,29 @@
+# statistikakeuangan
+
+
+#fungsi nilai akumulasi tunggal dan majemuk
+#k=modal,t=tahun,i=bunga,m=banyaknya membayar
+#pilihan(num)
+#1:nilai akumulasi tunggal
+#2:nilai akumulasi majemuk nominal
+#3:nilai akumulasi majemuk kontinu
+nilaiakumulasi <- function(num,k,t,i,m=TRUE)
+  switch(num, 
+         satu = {
+           tunggal = k*(1+i*t)
+           cat("Nilai akumulasi bunga tunggal:",tunggal)
+         },
+         dua = {
+           majemuknom = k*(1+i/m)^(m*t)
+           cat("Nilai akumulasi bunga majemuk nominal:",majemuknom)
+         },
+         tiga = {
+           majemukkon = k*exp(i*t)
+           cat("Nilai akumulasi bunga majemuk kontinu:",majemukkon)
+         }
+  )
+
+
+
+
+
