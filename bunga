@@ -1,0 +1,21 @@
+#fungsi bunga
+#k=modal,t=tahun,A=nilai akumulasi,m=banyaknya membayar
+#pilihan(num)
+#1:bunga tunggal
+#2:bunga majemuk nominal
+#3:bunga akumulasi majemuk kontinu
+bunga <- function(num,A,k,t,m=TRUE)
+  switch(num, 
+         satu = {
+           btunggal=(A/k-1)/t
+           cat("Bungga tunggal:",btunggal)
+         },
+         dua = {
+           bmajemuknom = ((A/k)^(1/(m*t))-1)*m
+           cat("Bunga majemuk nominal:",bmajemuknom)
+         },
+         tiga = {
+           bmajemukkon =log(A/k)/t
+           cat("Bunga majemuk kontinu:",bmajemukkon)
+         }
+  )
